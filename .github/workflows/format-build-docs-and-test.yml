@@ -1,0 +1,18 @@
+on:
+  push:
+    branches: [ '*' ]
+    tags-ignore:
+      - v*
+
+jobs:
+  format-build-docs-and-test:
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v6.0.2
+      with:
+        fetch-depth: 0
+    - uses: coursier/cache-action@v8.1.0
+    - uses: VirtusLab/scala-cli-setup@v1.12.5
+    - run: scala-cli --power format --check && scala-cli --power doc . -f && scala-cli --power test .
