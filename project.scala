@@ -1,8 +1,8 @@
 //> using repository https://central.sonatype.com/repository/maven-snapshots
-//> using scala 3.8.1
+//> using scala 3.8.2
 //> using toolkit 0.9.2
-//> using dep org.chipsalliance::chisel:7.7.0+33-a8d8f598-SNAPSHOT
-//> using plugin org.chipsalliance:::chisel-plugin:7.7.0+33-a8d8f598-SNAPSHOT
+//> using dep org.chipsalliance::chisel:7.10.0+18-fea815ef-SNAPSHOT
+//> using plugin org.chipsalliance:::chisel-plugin:7.10.0+18-fea815ef-SNAPSHOT
 //> using options -unchecked -deprecation -feature
 
 //> using publish.organization io.github.spamegg1
