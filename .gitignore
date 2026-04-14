@@ -45,6 +45,9 @@ metals.sbt
 *.out
 *.cmp
 
+# Chisel
+build/
+
 # Misc.
 *.rb
 *.py
