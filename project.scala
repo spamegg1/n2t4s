@@ -1,5 +1,6 @@
 //> using repository https://central.sonatype.com/repository/maven-snapshots
 //> using scala 3.8.1
+//> using toolkit 0.9.2
 //> using dep org.chipsalliance::chisel:7.7.0+33-a8d8f598-SNAPSHOT
 //> using plugin org.chipsalliance:::chisel-plugin:7.7.0+33-a8d8f598-SNAPSHOT
 //> using options -unchecked -deprecation -feature
