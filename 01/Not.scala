@@ -11,7 +11,7 @@ class Not extends Module:
   val in  = IO(Input(Bool()))
   val out = IO(Output(Bool()))
 
-  // implement here!
+  // implement here! You need to wrap any chips with `Module(...)`.
   val nand = Module(Nand())
   nand.a := in
   nand.b := in
