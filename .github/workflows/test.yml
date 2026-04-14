@@ -15,4 +15,7 @@ jobs:
         fetch-depth: 0
     - uses: coursier/cache-action@v8.1.0
     - uses: VirtusLab/scala-cli-setup@v1.12.5
-    - run: sudo apt-get install -y verilator && scala-cli --power test .
+    - name: Install verilator
+      run: sudo apt-get update && sudo apt-get install -y verilator
+    - name: Run tests
+      run: scala-cli --power test .
