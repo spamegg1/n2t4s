@@ -1,25 +1,18 @@
 import chisel3.simulator.ChiselSim
 import munit.FunSuite
 
+val NandData = Map(
+  (true, true)   -> false,
+  (true, false)  -> true,
+  (false, true)  -> true,
+  (false, false) -> true
+)
+
 class NandTest extends FunSuite with ChiselSim:
   test("nand"):
     simulate[Nand](new Nand()): nand =>
-      nand.a.poke(true)
-      nand.b.poke(true)
-      nand.clock.step(1)
-      nand.out.expect(false)
-
-      nand.a.poke(true)
-      nand.b.poke(false)
-      nand.clock.step(1)
-      nand.out.expect(true)
-
-      nand.a.poke(false)
-      nand.b.poke(true)
-      nand.clock.step(1)
-      nand.out.expect(true)
-
-      nand.a.poke(false)
-      nand.b.poke(false)
-      nand.clock.step(1)
-      nand.out.expect(true)
+      for ((a, b), out) <- NandData do
+        nand.a.poke(a)
+        nand.b.poke(b)
+        nand.clock.step(1)
+        nand.out.expect(out)
