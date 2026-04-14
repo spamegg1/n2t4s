@@ -1,7 +1,8 @@
-//> using scala 3.8.3
-//> using toolkit 0.9.2
-//> using dep org.chipsalliance:chisel_2.13:7.10.0
-//> using options -explain-cyclic -opt -opt-inline:**
+//> using repository https://central.sonatype.com/repository/maven-snapshots
+//> using scala 3.8.1
+//> using dep org.chipsalliance::chisel:7.7.0+33-a8d8f598-SNAPSHOT
+//> using plugin org.chipsalliance:::chisel-plugin:7.7.0+33-a8d8f598-SNAPSHOT
+//> using options -unchecked -deprecation -feature
 
 //> using publish.organization io.github.spamegg1
 //> using publish.name n2t4s

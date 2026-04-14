@@ -58,5 +58,6 @@ metals.sbt
 # Scratch
 Scratch.worksheet.sc
 Scratch.scala
+Scratch.test.scala
 scratch.md
 TODO.md
