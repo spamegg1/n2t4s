@@ -34,3 +34,14 @@
 
     - optimal: using only `And` (or `Nand`) and `Not`
     - optimal total Nand count: 5
+
+7. `Not16`
+8. `And16`
+9. `Or8Way`
+10. `Or16`
+11. `Mux4Way16`
+12. `Mux8Way16`
+13. `Mux16`
+14. `DMux4Way`
+15. `DMux8Way`
+16. `Zero`
