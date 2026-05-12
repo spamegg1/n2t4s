@@ -15,6 +15,7 @@ class Or extends Module:
   val out = IO(Output(Bool()))
 
   // implement here! You need to wrap any chips with `Module(...)`.
+  // Most optimal version uses a total of 3 Nand gates.
   val nand = Module(Nand())
   val notA = Module(Not())
   val notB = Module(Not())

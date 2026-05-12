@@ -1,5 +1,8 @@
 import chisel3.*
 
+// Implement without manually setting the Boolean value or using any Boolean operators.
+// Use existing chips instead (for now, `Nand` and `Not` are the only ones).
+
 /** And gate
   *
   * in: a, b
@@ -12,11 +15,9 @@ class And extends Module:
   val out = IO(Output(Bool()))
 
   // implement here! You need to wrap any chips with `Module(...)`.
-  // Implement without manually setting the Boolean value or using any Boolean operators.
-  // Use existing chips instead (for now, `Nand` and `Not` are the only ones).
   // Most optimal uses only 2 `Nand` chips total.
-  val nand = Module(Nand())
-  val not  = Module(Not())
+  val nand = Module(Nand()) // 1 Nand
+  val not  = Module(Not())  // 1 Nand
   nand.a := a
   nand.b := b
   not.in := nand.out

@@ -1,7 +1,7 @@
 import chisel3.*
 
 // Implement without manually setting the Boolean value or using any Boolean operators.
-// Use existing chips instead (for now, `Nand` and `Not` are the only ones).
+// Use existing chips instead (for now, `Nand`, `And`, `Not` are the only ones).
 
 /** DMux gate
   *
@@ -21,9 +21,9 @@ class DMux extends Module:
 
   // implement here! You need to wrap any chips with `Module(...)`.
   // Most optimal version uses a total of 5 Nand gates.
-  val and1 = Module(And())
-  val and2 = Module(And())
-  val not  = Module(Not())
+  val and1 = Module(And()) // 2 Nand
+  val and2 = Module(And()) // 2 Nand
+  val not  = Module(Not()) // 1 Nand
 
   not.in := sel
   and1.a := not.out
