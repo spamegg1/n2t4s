@@ -1,14 +1,14 @@
 import chisel3.simulator.ChiselSim
 import munit.FunSuite
 
-val XorData = Map(
-  (true, true)   -> false,
-  (true, false)  -> true,
-  (false, true)  -> true,
-  (false, false) -> false
-)
-
 class XorTest extends FunSuite with ChiselSim:
+  val XorData = Map(
+    (true, true)   -> false,
+    (true, false)  -> true,
+    (false, true)  -> true,
+    (false, false) -> false
+  )
+
   test("Xor"):
     simulate[Xor](new Xor()): xor =>
       for ((a, b), out) <- XorData do

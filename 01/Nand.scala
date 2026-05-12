@@ -1,6 +1,7 @@
 import chisel3.*
 
-/** Provided as already implemented.
+/** Provided as already implemented. Normally implemented with electrical engineering, not
+  * circuit logic.
   *
   * in: a, b
   *
