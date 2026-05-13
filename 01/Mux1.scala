@@ -11,7 +11,7 @@ import chisel3.*
   *
   * out = a if sel == 0, b if sel == 1
   */
-class Mux extends Module:
+class Mux1 extends Module:
   val a   = IO(Input(Bool()))
   val b   = IO(Input(Bool()))
   val sel = IO(Input(Bool()))

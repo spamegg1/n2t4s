@@ -49,12 +49,13 @@
 
 9. `Or16`
 
-    - Similar to `Not16`.
+    - Similar to `And16`.
     - optimal total Nand count: 48
 
-10. `Or8Way`
+10. `Mux16`
 
-    - asd
+    - Similar to `And16`.
+    - optimal total Nand count: 64
 
 11. `Mux4Way16`
 
@@ -64,7 +65,7 @@
 
     - asd
 
-13. `Mux16`
+13. `Or8Way`
 
     - asd
 
