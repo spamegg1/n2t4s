@@ -9,7 +9,7 @@ val NandData = Map(
 )
 
 class NandTest extends FunSuite with ChiselSim:
-  test("nand"):
+  test("Nand"):
     simulate[Nand](new Nand()): nand =>
       for ((a, b), out) <- NandData do
         nand.a.poke(a)

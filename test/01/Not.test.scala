@@ -2,7 +2,7 @@ import chisel3.simulator.ChiselSim
 import munit.FunSuite
 
 class NotTest extends FunSuite with ChiselSim:
-  test("not"):
+  test("Not"):
     simulate[Not](new Not()): not =>
       not.in.poke(true)
       not.clock.step(1)
