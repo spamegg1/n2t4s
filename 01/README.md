@@ -63,17 +63,17 @@
 
 12. `Mux8Way16`
 
-    - asd
+    - optimal total Nand count: 448
 
-13. `Or8Way`
-
-    - asd
-
-14. `DMux4Way`
+13. `DMux4Way`
 
     - asd
 
-15. `DMux8Way`
+14. `DMux8Way`
+
+    - asd
+
+15. `Or8Way`
 
     - asd
 
