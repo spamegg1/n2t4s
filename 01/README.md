@@ -59,7 +59,7 @@
 
 11. `Mux4Way16`
 
-    - asd
+    - optimal total Nand count: 192
 
 12. `Mux8Way16`
 
