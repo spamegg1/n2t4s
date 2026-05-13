@@ -49,7 +49,8 @@
 
 9. `Or16`
 
-    - asd
+    - Similar to `Not16`.
+    - optimal total Nand count: 48
 
 10. `Or8Way`
 
