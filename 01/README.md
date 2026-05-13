@@ -67,11 +67,11 @@
 
 13. `DMux4Way`
 
-    - asd
+    - optimal total Nand count: 15
 
 14. `DMux8Way`
 
-    - asd
+    - optimal total Nand count: 35?
 
 15. `Or8Way`
 
