@@ -36,12 +36,44 @@
     - optimal total Nand count: 5
 
 7. `Not16`
+
+    - Chisel does not support sub-bus assignment.
+    - [expl](https://www.chisel-lang.org/docs/cookbooks/cookbook#how-do-i-do-subword-assignment-assign-to-some-bits-in-a-uint)
+    - need to use an intermediate `Vec` in order to do sub-bus assignment.
+    - optimal total Nand count: 16
+
 8. `And16`
+
+    - asd
+
 9. `Or8Way`
+
+    - asd
+
 10. `Or16`
+
+    - asd
+
 11. `Mux4Way16`
+
+    - asd
+
 12. `Mux8Way16`
+
+    - asd
+
 13. `Mux16`
+
+    - asd
+
 14. `DMux4Way`
+
+    - asd
+
 15. `DMux8Way`
+
+    - asd
+
 16. `Zero`
+
+    - asd
