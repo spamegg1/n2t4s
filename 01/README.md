@@ -67,7 +67,8 @@
 
 13. `DMux4Way`
 
-    - optimal total Nand count: 15
+    - there is a naive way using `DMux` and total 15 Nand gates
+    - optimal total Nand count: 14
 
 14. `DMux8Way`
 

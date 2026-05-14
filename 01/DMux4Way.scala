@@ -20,18 +20,48 @@ class DMux4Way extends Module:
   val c   = IO(Output(Bool()))
   val d   = IO(Output(Bool()))
 
-  // implement here! Optimal nand count is 15
-  val dmux1 = Module(DMux())
-  val dmux2 = Module(DMux())
-  val dmux3 = Module(DMux())
+  // implement here! Optimal nand count is 14
+  // Here is a naive way using 3 DMux = 15 Nand
+  // val dmux1 = Module(DMux())
+  // val dmux2 = Module(DMux())
+  // val dmux3 = Module(DMux())
 
-  dmux1.in  := in
-  dmux1.sel := sel(1)
-  dmux2.in  := dmux1.a
-  dmux2.sel := sel(0)
-  dmux3.in  := dmux1.b
-  dmux3.sel := sel(0)
-  a         := dmux2.a
-  b         := dmux2.b
-  c         := dmux3.a
-  d         := dmux3.b
+  // dmux1.in  := in
+  // dmux1.sel := sel(1)
+  // dmux2.in  := dmux1.a
+  // dmux2.sel := sel(0)
+  // dmux3.in  := dmux1.b
+  // dmux3.sel := sel(0)
+  // a         := dmux2.a
+  // b         := dmux2.b
+  // c         := dmux3.a
+  // d         := dmux3.b
+
+  // Here is optimal 14 Nand gates:
+  val not1 = Module(Not())
+  val not2 = Module(Not())
+  val and1 = Module(And())
+  val and2 = Module(And())
+  val and3 = Module(And())
+  val and4 = Module(And())
+  val and5 = Module(And())
+  val and6 = Module(And())
+
+  not1.in := sel(0)
+  not2.in := sel(1)
+  and1.a  := in
+  and1.b  := not1.out
+  and2.a  := in
+  and2.b  := sel(0)
+  and3.a  := and1.out
+  and3.b  := not2.out
+  and4.a  := and2.out
+  and4.b  := not2.out
+  and5.a  := and1.out
+  and5.b  := sel(1)
+  and6.a  := and2.out
+  and6.b  := sel(1)
+  a       := and3.out
+  b       := and4.out
+  c       := and5.out
+  d       := and6.out
