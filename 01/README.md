@@ -54,25 +54,29 @@
 
 10. `Mux16`
 
-    - Similar to `And16`.
-    - optimal total Nand count: 64
+    - Similar to `And16`. Total Nand count: 64
+    - optimal = ???
 
 11. `Mux4Way16`
 
-    - optimal total Nand count: 192
+    - total Nand count: 192
+    - optimal = ???
 
 12. `Mux8Way16`
 
-    - optimal total Nand count: 448
+    - total Nand count: 448
+    - optimal = ???
 
 13. `DMux4Way`
 
-    - there is a naive way using `DMux` and total 15 Nand gates
+    - there is a naive way using only `DMux`, total 15 Nand gates
     - optimal total Nand count: 14
 
 14. `DMux8Way`
 
-    - optimal total Nand count: 35
+    - There is a naive way using only `DMux`, total 35 Nand
+    - Also another way using `DMux4Way` and `DMux`, with total 33 Nand
+    - optimal total Nand count: 31
 
 15. `Or8Way`
 

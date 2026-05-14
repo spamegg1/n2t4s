@@ -38,14 +38,14 @@ class DMux4Way extends Module:
   // d         := dmux3.b
 
   // Here is optimal 14 Nand gates:
-  val not1 = Module(Not())
-  val not2 = Module(Not())
-  val and1 = Module(And())
-  val and2 = Module(And())
-  val and3 = Module(And())
-  val and4 = Module(And())
-  val and5 = Module(And())
-  val and6 = Module(And())
+  val not1 = Module(Not()) // 1 Nand
+  val not2 = Module(Not()) // 1 Nand
+  val and1 = Module(And()) // 2 Nand
+  val and2 = Module(And()) // 2 Nand
+  val and3 = Module(And()) // 2 Nand
+  val and4 = Module(And()) // 2 Nand
+  val and5 = Module(And()) // 2 Nand
+  val and6 = Module(And()) // 2 Nand
 
   not1.in := sel(0)
   not2.in := sel(1)
