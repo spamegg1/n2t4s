@@ -4,9 +4,11 @@
 
 1. `HalfAdder`
 
+    - Hint from the book:
     - The outputs `sum(a,b)` and `carry(a,b)` happen to be identical to those of
       two simple Boolean functions discussed and implemented in project 1.
-    - optimal total Nand count: 6
+    - So there is a simple way, using `Xor` and `And` (total 6 Nand gates)
+    - optimal total Nand count: 5
 
 2. `FullAdder`
 
