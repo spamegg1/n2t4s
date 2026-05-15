@@ -1,12 +1,59 @@
 # Project 01
 
+## Simpler vs. "optimized"
+
+We might consider a chip more "optimized" if it uses fewer chips.
+But what if a chip uses one big complicated chip, and another uses 5 simpler chips?
+
+So we could adjust the meaning of "optimized" to mean the minimum Nand gates in total.
+The total being the sum of the Nand counts of all the chips used in a design.
+For example if chip X is made out of two chips Y and Z,
+which use 5 and 3 Nand gates total, then X would use a total of 8 Nand gates.
+
+The book says:
+
+> Each gate can be implemented in more than one way. The simpler the
+> implementation, the better. As a general rule, strive to use as few chip-
+> parts as possible.
+
+The book is asking us to minimize chip count.
+We might misinterpret this as minimizing the total Nand gate count.
+What does "simpler" mean? We might misinterpret this as using lower level gates,
+because higher level composite gates might be considered "more complex". But:
+
+> Although each chip can be implemented directly from Nand gates only,
+> we recommend always using composite gates that were already
+> implemented. See the previous tip.
+
+So the book is not asking us to minimize the total Nand gate count
+or use lower level gates.
+Rather it is asking us to use the higher level, composite gates,
+even if there is another design that might use fewer Nand gates in total,
+but leads to a more complex design.
+By "simpler" the book means higher-level, composite gates, with fewer gates in total
+(not fewer Nand gates in total).
+
+I'll try to show both ways: the simple high-level way,
+and the more complex, optimized way that minimizes total Nand count.
+
+Sometimes there are also solutions that are somewhere in between.
+There are also a few cases where the "simpler" solution using higher level gates
+uses more gates in total than the lower level solution.
+So, using higher level composite gates does not always mean fewer gates.
+But this is rare.
+
+Also, we might not go all the way to pure Nand gates for the optimal solutions;
+instead it might be mostly Nand gates, plus some lower level gates
+that are pretty close to a `Nand` gate (like `And`)
+so that it's clear we could not do better by replacing them with pure `Nand`.
+
 ## Order
 
 1. `Not`
 
     - using only `Nand`
     - optimal total Nand count: 1
-    - from this point, `Not` can be used freely, since it's equivalent to a `Nand`
+    - from this point, `Not` can be used freely, since it's equivalent to 1 `Nand`
 
 2. `And`
 
@@ -15,24 +62,26 @@
 
 3. `Or`
 
-    - using only `Nand` and `Not`
+    - there is a simple way using `And` and `Not`, using 5 Nand total
+    - optimal using only `Nand` and `Not`
     - optimal total Nand count: 3
 
 4. `Xor`
 
-    - there is a naive, inefficient way using `And`, `Or`, `Not`
+    - there is a simple way using `And`, `Or`, `Not` (total 9 Nand)
     - optimal: using only `Nand`
     - optimal total Nand count: 4
 
 5. `Mux`
 
-    - there is a naive, inefficient way using `And`, `Or`, `Not`
+    - there is a simple way using `And`, `Or`, `Not` (8 Nand)
     - optimal: using only `Nand` and `Not`
     - optimal total Nand count: 4
 
 6. `DMux`
 
-    - optimal: using only `And` (or `Nand`) and `Not`
+    - Similarly, there is a simple way using `And`, `Or`, `Not`
+    - optimal using only `And` (or `Nand`) and `Not`
     - optimal total Nand count: 5
 
 7. `Not16`
@@ -54,34 +103,30 @@
 
 10. `Mux16`
 
-    - Similar to `And16`. Total Nand count: 64
-    - optimal = ???
+    - Similar to `And16`.
+    - optimal total Nand count: 64
 
-11. `Mux4Way16`
+11. `Or8Way`
+
+    - optimal total Nand count: 21
+
+12. `Mux4Way16`
 
     - total Nand count: 192
     - optimal = ???
 
-12. `Mux8Way16`
+13. `Mux8Way16`
 
     - total Nand count: 448
     - optimal = ???
 
-13. `DMux4Way`
+14. `DMux4Way`
 
-    - there is a naive way using only `DMux`, total 15 Nand gates
+    - there is a simple way using only `DMux`, total 15 Nand gates
     - optimal total Nand count: 14
 
-14. `DMux8Way`
+15. `DMux8Way`
 
-    - There is a naive way using only `DMux`, total 35 Nand
+    - There is a simple way using only `DMux`, total 35 Nand
     - Also another way using `DMux4Way` and `DMux`, with total 33 Nand
     - optimal total Nand count: 31
-
-15. `Or8Way`
-
-    - optimal total Nand count: 21
-
-16. `Zero`
-
-    - asd
