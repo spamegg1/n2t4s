@@ -19,7 +19,10 @@
 
 4. `Inc16`
 
-    - asd
+    > Although the operation can be realized by our general-purpose
+    > Adder chip, a dedicated incrementer chip can do it more efficiently.
+    - There is a simple way using `Add16` (total Nand count 140)
+    - optimal total Nand count: 80
 
 5. `ALU`
 
