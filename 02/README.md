@@ -26,4 +26,5 @@
 
 5. `ALU`
 
-    - asd
+    - total Nand count: 723
+    - optimal total Nand count: ???
