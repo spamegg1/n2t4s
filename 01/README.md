@@ -13,8 +13,8 @@ which use 5 and 3 Nand gates total, then X would use a total of 8 Nand gates.
 The book says:
 
 > Each gate can be implemented in more than one way. The simpler the
-> implementation, the better. As a general rule, strive to use as few chip-
-> parts as possible.
+> implementation, the better. As a general rule,
+> strive to use as few chip parts as possible.
 
 The book is asking us to minimize chip count.
 We might misinterpret this as minimizing the total Nand gate count.
@@ -34,9 +34,9 @@ By "simpler" the book means higher-level, composite gates, with fewer gates in t
 (not fewer Nand gates in total).
 
 I'll try to show both ways: the simple high-level way,
-and the more complex, optimized way that minimizes total Nand count.
+and the more complex way that minimizes total Nand count.
 
-Sometimes there are also solutions that are somewhere in between.
+Sometimes there are solutions that are somewhere in between.
 There are also a few cases where the "simpler" solution using higher level gates
 uses more gates in total than the lower level solution.
 So, using higher level composite gates does not always mean fewer gates.
@@ -81,8 +81,8 @@ so that it's clear we could not do better by replacing them with pure `Nand`.
 6. `DMux`
 
     - Similarly, there is a simple way using `And`, `Or`, `Not`
-    - optimal using only `And` (or `Nand`) and `Not`
-    - optimal total Nand count: 5
+    - Another way using `And` (or `Nand`) and `Not` (5 Nand)
+    - optimal total Nand count: 4
 
 7. `Not16`
 
@@ -122,11 +122,11 @@ so that it's clear we could not do better by replacing them with pure `Nand`.
 
 14. `DMux4Way`
 
-    - there is a simple way using only `DMux`, total 15 Nand gates
-    - optimal total Nand count: 14
+    - there is a simple way using only `DMux`, total 12 Nand gates
+    - optimal total Nand count: 12
 
 15. `DMux8Way`
 
-    - There is a simple way using only `DMux`, total 35 Nand
-    - Also another way using `DMux4Way` and `DMux`, with total 33 Nand
-    - optimal total Nand count: 31
+    - There is a simple way using only `DMux`, total 28 Nand
+    - Also a simpler using `DMux4Way` and `DMux`, with total 28 Nand
+    - optimal total Nand count: 28
