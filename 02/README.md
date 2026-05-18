@@ -22,7 +22,8 @@
     > Although the operation can be realized by our general-purpose
     > Adder chip, a dedicated incrementer chip can do it more efficiently.
     - There is a simple way using `Add16` (total Nand count 140)
-    - optimal total Nand count: 80
+    - There is a complex way using `HalfAdder` (total Nand count 80)
+    - optimal total Nand count: 75
 
 5. `ALU`
 

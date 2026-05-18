@@ -8,7 +8,7 @@ class Inc16 extends Module:
   val in  = IO(Input(Bits(16.W)))
   val out = IO(Output(Bits(16.W)))
 
-  // implement here! optimal total Nand count 80
+  // implement here! total Nand count 80
   val adders = Array.ofDim[HalfAdder](16)
   val result = VecInit(in.asBools)
 

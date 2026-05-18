@@ -38,12 +38,12 @@ class HalfAdder extends Module:
   // sum   := xor.out
 
   // Here is the optimized version, 5 Nand gates total.
-  // It uses the optimized Xor implementation, then adds a Not gate to obtain And.
+  // It uses the Nand layout of Xor, then adds a Not gate to obtain And.
   val nand1 = Module(Nand())
   val nand2 = Module(Nand())
   val nand3 = Module(Nand())
   val nand4 = Module(Nand())
-  val nand5 = Module(Nand())
+  val not   = Module(Not())
   nand1.a := a
   nand1.b := b
   nand2.a := a
@@ -52,7 +52,6 @@ class HalfAdder extends Module:
   nand3.b := b
   nand4.a := nand2.out
   nand4.b := nand3.out
-  nand5.a := nand1.out
-  nand5.b := nand1.out
+  not.in  := nand1.out
   sum     := nand4.out
-  carry   := nand5.out
+  carry   := not.out
